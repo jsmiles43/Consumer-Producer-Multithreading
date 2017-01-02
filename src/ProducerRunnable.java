@@ -1,10 +1,10 @@
 import java.util.Queue;
 
-public class Producer implements Runnable {
+public class ProducerRunnable implements Runnable {
 	public Queue<Integer> Buffer;
 	public int size;
 	
-	public Producer(Queue<Integer> _Buffer, int size) {
+	public ProducerRunnable(Queue<Integer> _Buffer, int size) {
 		this.Buffer = _Buffer;
 		this.size = size;       			
 		/*
@@ -22,6 +22,7 @@ public class Producer implements Runnable {
 	public void Produce() {
 		while (Buffer.size() == size) {
 			int item = produceItem(Buffer);
+			
 			
 			
 		}

@@ -1,13 +1,13 @@
 import java.util.Queue;
 
-public class Consumer implements Runnable {
+public class ConsumerRunnable implements Runnable {
 	public Queue<Integer> Buffer;
 	public int itemCount;
 	public int size;
 	
-	public Consumer(Queue<Integer> Buffer) {
+	public ConsumerRunnable(Queue<Integer> Buffer, int size) {
 		this.Buffer = Buffer;
-		this.itemCount = Buffer.capacity();
+		this.size = size;
 	}
 	
 	public void run() {
