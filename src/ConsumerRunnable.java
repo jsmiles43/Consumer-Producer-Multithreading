@@ -11,21 +11,25 @@ public class ConsumerRunnable implements Runnable {
 	}
 	
 	public void run() {
-		while(Buffer.isEmpty()) {
+		while(true) {
 			try {
-				
+				System.out.println("Consumed");
+				Consume();
+                Thread.sleep(50);
 			}
 			catch(InterruptedException ex) {
-				
+				System.out.println(ex);
 			}
 		}	
 	}
 
 	public void Consume() throws InterruptedException {
+		while(Buffer.isEmpty()) {
+			System.out.println("Queue is empty so" + Thread.currentThread().getName() + " is waiting" );
+			Buffer.wait();
+		}
 		
+		Buffer.remove();
 	}
 	
-	public void consumerItem(Queue<Integer> _Buffer, int i) {			//insert random in into buffer
-		_Buffer.get(index)
-	}
 }
