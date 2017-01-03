@@ -12,10 +12,18 @@ public class ConsumerRunnable implements Runnable {
 	
 	public void run() {
 		while(Buffer.isEmpty()) {
-			
+			try {
+				
+			}
+			catch(InterruptedException ex) {
+				
+			}
 		}	
 	}
 
+	public void Consume() throws InterruptedException {
+		
+	}
 	
 	public void consumerItem(Queue<Integer> _Buffer, int i) {			//insert random in into buffer
 		_Buffer.get(index)

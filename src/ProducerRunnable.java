@@ -15,17 +15,21 @@ public class ProducerRunnable implements Runnable {
 	}
 	
 	public void run() {
-		
-		
-	}
-	
-	public void Produce() {
 		while (Buffer.size() == size) {
 			int item = produceItem(Buffer);
-			
+			try {
+				
+			}
+			catch(InterruptedException ex) {
+				
+			}
 			
 			
 		}
+	}
+	
+	public void Produce() throws InterruptedException {
+		
 	}
 	
 	
