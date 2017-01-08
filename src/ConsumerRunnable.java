@@ -29,7 +29,11 @@ public class ConsumerRunnable implements Runnable {
 			Buffer.wait();
 		}
 		
-		Buffer.remove();
+		synchronized (Buffer) {
+			Buffer.remove();
+		}
+		
+		
 	}
 	
 }

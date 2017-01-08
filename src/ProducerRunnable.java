@@ -37,8 +37,13 @@ public class ProducerRunnable implements Runnable {
 			
 			System.out.println("Queue is empty so" + Thread.currentThread().getName() + " is waiting" );
 		}
-		int item = produceItem();
-		Buffer.add(item);
+		
+		synchronized (Buffer) {
+			int item = produceItem();
+			Buffer.add(item);
+		}
+		
+		
 	}
 	
 	
